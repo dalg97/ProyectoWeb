@@ -1,0 +1,9 @@
+com\Proyecto\dao\UsuarioDao.class
+com\Proyecto\domain\Usuario.class
+com\Proyecto\service\UsuarioService.class
+com\Proyecto\service\impl\UsuarioServiceImpl.class
+com\Proyecto\domain\Producto.class
+com\Proyecto\ProyectoApplication.class
+com\Proyecto\controller\UsuarioController.class
+com\Proyecto\domain\Noticia.class
+com\Proyecto\service\FirebaseStorageService.class
