@@ -9,7 +9,7 @@
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
-        <header th:fragment="header" class="header">
+        <header th:fragment="headerUser" class="headerUser">
             <section id="main-header" class="py-3 bg-success text-white">
                 <div class="container">
                     <div class="row">
@@ -27,13 +27,70 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/principal/principal}">[[#{plantilla.principal}]]</a></li>
+                          <!--  <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li> -->
+                          <!-- Utilizar listado para vista Cliente o listadoAdmin para vista de Administrador -->
+                            <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/noticia/listadoAdmin}">[[#{plantilla.noticias}]]</a></li>
+                        </ul>
+                        <div class="col-md-1">
+                            <ul class="navbar-nav">
+                                <li class="nav-item px-10"><a class="nav-link" th:href="@{/(lang=es)}">ES</a></li>
+                                <li class="nav-item px-10"><a class="nav-link" th:href="@{/(lang=en)}">EN</a></li>
+                            </ul> 
+                        </div>
+                        <div class="col-md-2">
+                            <div class="right-icons">
+                                <a href="https://www.tucompania.com/carrito" class="text-white mr-3" target="_blank">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <a href="https://www.tucompania.com/perfil" class="text-white" target="_blank">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        
+        <header th:fragment="headerAdmin" class="headerAdmin">
+            <section id="main-header" class="py-3 bg-success text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1><i class="fas fa-paw"></i> [[#{plantilla.suTienda}]]</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <nav class="navbar navbar-expand-sm navbar-dark p-0" style="background-color: #60cc80;">
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a>
+                    <button class="navbar-toggler" data-bs-toggle="collapse"  data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span> 
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/principal/principal}">[[#{plantilla.principal}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
+                         <!--   <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/producto/listadoAdmin}">[[#{plantilla.productos}]]</a></li> -->
+                            <li class="nav-item px-2"><a class="nav-menu-link nav-link" th:href="@{/noticia/listadoAdmin}">[[#{plantilla.noticias}]]</a></li>
                         </ul>
                         <div class="col-md-3">
                             <ul class="navbar-nav">
                                 <li class="nav-item px-2"><a class="nav-link" th:href="@{/(lang=es)}">ES</a></li>
                                 <li class="nav-item px-2"><a class="nav-link" th:href="@{/(lang=en)}">EN</a></li>
                             </ul> 
+                        
+                            <div class="right-icons">
+                                <a href="https://www.tucompania.com/carrito" class="text-white mr-3" target="_blank">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <a href="https://www.tucompania.com/perfil" class="text-white" target="_blank">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,6 +98,17 @@
         </header>
          <footer th:fragment="footer" class="bg-success text-white mt-5 p-2">
             <div class="container">
+                <div class="col-4 d-flex align-items-center ">
+                    <a href="https://wa.me/1234567890" class="text-white" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tucompania" class="text-white mr-3" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/tucompania" class="text-white" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
                 <div class="col">
                     <p class="lead text-center">
                         &COPY [[#{plantilla.derechos}]]

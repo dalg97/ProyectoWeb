@@ -5,13 +5,14 @@
         <title>Usuarios</title>
     </head>
     <body>
-        <header th:replace="~{layout/plantilla :: header}"/>
-
+        
+        <header th:replace="~{layout/plantilla :: headerAdmin}"/>    
+        
         <section th:replace="~{usuario/fragmentos :: botonesAgregar}"/>
         <section th:replace="~{usuario/fragmentos :: agregarUsuario}"/> 
-        <section th:replace="~{usuario/fragmentos :: listadoUsuarios}" style="background-color: green;opacity: 0.3;"/>
-
+        <section th:replace="~{usuario/fragmentos :: listadoUsuarios}"/>
+        
         <footer th:replace="~{layout/plantilla :: footer}"/>      
-      
+        
     </body>
 </html>

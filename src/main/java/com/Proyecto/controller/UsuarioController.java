@@ -44,4 +44,9 @@ public class UsuarioController {
         model.addAttribute("usuario", usuario);
         return "/usuario/modifica";
     }
+    
+    @GetMapping("/principal")
+    public String principal() {
+        return "/principal/principal";
+    }
 }
